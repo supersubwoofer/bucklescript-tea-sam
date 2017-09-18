@@ -1,4 +1,4 @@
-This is a starter kit for bucklescript with [tea](https://github.com/OvermindDL1/bucklescript-tea). It uses [rollup.js](https://rollupjs.org/) to package the javascript and [serve](https://github.com/zeit/serve) to serve the release folder.
+This is an experiment for SAM pattern on bucklescript-TEA
 
 # Organisation
 

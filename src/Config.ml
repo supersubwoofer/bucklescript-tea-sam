@@ -1,0 +1,1 @@
+let counterMax = 10;
