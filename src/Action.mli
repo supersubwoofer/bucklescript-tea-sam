@@ -1,2 +1,2 @@
 open Type
-val propose : model -> action -> model
+val propose : model -> actionMsg -> model

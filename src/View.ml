@@ -9,9 +9,9 @@ let h1 _model =
       [ text "SAM rocket example: Bucklescript-TEA -> SAM" ]
     ]
 
-let button title msg =
+let button title actionMsg =
   button 
-    [ onClick msg ] 
+    [ onClick actionMsg ] 
     [ text title ]
 
 let ready model =

@@ -4,8 +4,9 @@ type model = {
   launched: bool; 
   aborted: bool;
 }
+type proposal = model
 
-type action =
+type actionMsg =
   | Start
   | Decrement
   | Launch

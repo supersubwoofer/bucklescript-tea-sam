@@ -1,8 +1,8 @@
 open Type
 open Config
 
-let propose model action =
-  match action with
+let propose model actionMsg =
+  match actionMsg with
   | Start -> 
     { model with started = true }
   | Decrement -> 
