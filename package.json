@@ -1,6 +1,7 @@
 {
   "name": "bucklescript-tea-sam",
   "version": "0.1.0",
+  "author": "supersubwoofer",
   "scripts": {
     "clean": "bsb -clean",
     "clean:all": "bsb -clean-world",
