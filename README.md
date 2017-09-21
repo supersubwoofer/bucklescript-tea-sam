@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/supersubwoofer/bucklescript-tea-sam.svg?branch=bucklescript-tea-sam)](https://travis-ci.org/supersubwoofer/bucklescript-tea-sam)
+
 This is an experiment for [SAM pattern](http://sam.js.org/) on [bucklescript-TEA](https://github.com/OvermindDL1/bucklescript-tea)
 
 # Organisation
