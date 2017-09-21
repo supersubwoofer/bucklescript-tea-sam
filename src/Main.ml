@@ -6,7 +6,7 @@ open State
 open Action
 open Model
 
-(* This is the main function, it can be named anything you want but `main` is traditional.
+(* This is the main function, SAM modules are wired to TEA.
   The Program returned here has a set of callbacks that can easily be called from
   Bucklescript or from javascript for running this main attached to an element,
   or even to pass a message into the event loop.  You can even expose the

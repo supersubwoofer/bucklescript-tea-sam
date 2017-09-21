@@ -1,4 +1,4 @@
-This is an experiment for SAM pattern on bucklescript-TEA
+This is an experiment for [SAM pattern](http://sam.js.org/) on [bucklescript-TEA](https://github.com/OvermindDL1/bucklescript-tea)
 
 # Organisation
 
@@ -29,3 +29,9 @@ npm run build
 ```
 npm run watch
 ```
+
+## Credits
+- [Bucklescript-TEA](https://github.com/OvermindDL1/bucklescript-tea)
+- [Bucklescript-TEA starter kit](https://github.com/tcoopman/bucklescript-tea-starter-kit)
+- [SAM pattern](http://sam.js.org/)
+- [TEA - The Elm Architecture](http://guide.elm-lang.org/architecture/index.html)
