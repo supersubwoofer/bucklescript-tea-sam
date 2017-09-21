@@ -12,8 +12,8 @@ let initModel = {
 let init() = initModel, none
 
 let present model proposal =
-  let currentState = getState model
-  in match currentState with
+  let currentState = getState model in 
+  match currentState with
   | Ready ->
       { model with started = proposal.started }
   | Counting -> 

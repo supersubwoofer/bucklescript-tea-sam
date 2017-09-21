@@ -29,8 +29,8 @@ let getState model =
   else Unresolved
   
 let representation model =
-  let currentState = getState model
-  in match currentState with
+  let currentState = getState model in
+  match currentState with
   | Ready -> ready model
   | Counting -> counting model
   | Aborted -> aborted model
@@ -38,8 +38,8 @@ let representation model =
   | Unresolved -> unresolved model
 
 let nextAction model = 
-  let currentState = getState model
-  in match currentState with
+  let currentState = getState model in
+  match currentState with
   | Counting -> 
   	if model.counter > 0 then
 		  model, Tea_time.delay 1000.0 Decrement

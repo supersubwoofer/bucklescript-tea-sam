@@ -1,4 +1,5 @@
 open Type
+open Config
 
 let propose model action =
   match action with
@@ -11,4 +12,4 @@ let propose model action =
   | Abort -> 
     { model with aborted = true }
   | Reset ->
-    { model with counter = Config.counterMax }
+    { model with counter = counterMax }
