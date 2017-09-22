@@ -9,6 +9,7 @@ export default {
         node_resolve({
             jsnext: true,
             main: true,
+            module: true,
             browser: true,
         }),
         livereload('release')
