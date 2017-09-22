@@ -6,7 +6,7 @@ export default {
     dest: './release/main.js',
     format: 'iife',
     plugins: [
-        node_resolve({module: true, browser: true}),
+        node_resolve({ jsnext: true, main: true }),
         livereload('release')
     ],
     name: 'starter'
