@@ -1,9 +1,10 @@
 import node_resolve from 'rollup-plugin-node-resolve';
-import localResolve from 'rollup-plugin-local-resolve';
+import multiEntry from 'rollup-plugin-multi-entry';
 import livereload from 'rollup-plugin-livereload';
 
 
 export default {
+    entry: './lib/es6/src/main.js',
     input: './lib/es6/src/main.js',
     output: {
         file: './release/main.js',
@@ -11,7 +12,7 @@ export default {
     },
     plugins: [
         node_resolve({module: true, browser: true}),
-        localResolve(),
+        multiEntry(),
         livereload('release')
     ],
     name: 'starter'
