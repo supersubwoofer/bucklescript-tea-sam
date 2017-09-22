@@ -7,9 +7,8 @@
     "clean:all": "bsb -clean-world",
     "build:bsb": "bsb -make-world",
     "build:js": "rollup -c",
-    "ci:debug": "node ci.debug.js",
     "serve": "serve release",
-    "build": "run-s build:bsb ci:debug build:js",
+    "build": "run-s build:bsb build:js",
     "watch:bsb": "bsb -make-world -w",
     "watch:js": "rollup -c -w",
     "watch": "run-p watch:bsb watch:js serve"
