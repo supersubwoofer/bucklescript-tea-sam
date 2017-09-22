@@ -24,10 +24,9 @@
     "bucklescript-tea": "^0.6.6",
     "npm-run-all": "^4.1.0",
     "rollup": "^0.48.2",
-    "rollup-watch": "^4.3.1",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-multi-entry": "^2.0.1",
     "rollup-plugin-livereload": "^0.6.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^4.3.1",
     "serve": "^6.0.6"
   }
 }
