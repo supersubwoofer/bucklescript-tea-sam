@@ -18,5 +18,4 @@ let present model proposal =
   | Counting when model.counter = 0 -> { model with launched = proposal.launched }
   | Counting -> { model with aborted = proposal.aborted; counter = proposal.counter }
   | Aborted when proposal.counter = counterMax -> initModel
-  | Aborted -> model
   | _ -> model
