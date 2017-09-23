@@ -33,7 +33,7 @@ npm run watch
 ```
 
 ## Credits
-- [Bucklescript-TEA](https://github.com/OvermindDL1/bucklescript-tea)
-- [Bucklescript-TEA starter kit](https://github.com/tcoopman/bucklescript-tea-starter-kit)
-- [SAM pattern](http://sam.js.org/)
-- [TEA - The Elm Architecture](http://guide.elm-lang.org/architecture/index.html)
+- [Bucklescript-TEA](https://github.com/OvermindDL1/bucklescript-tea) by OvermindDL1
+- [Bucklescript-TEA starter kit](https://github.com/tcoopman/bucklescript-tea-starter-kit) by Thomas Coopman
+- [SAM pattern](http://sam.js.org/) by Jean-Jacques Dubray
+- [TEA - The Elm Architecture](http://guide.elm-lang.org/architecture/index.html) by Evan Czaplicki

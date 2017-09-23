@@ -4,30 +4,13 @@ open Config
 open View
 
 let getState model = 
-  if model.counter = counterMax 
-    && not model.started 
-    && not model.launched 
-    && not model.aborted 
-    then Ready
-  else if model.counter <= counterMax 
-    && model.counter >= 0 
-    && model.started 
-    && not model.launched 
-    && not model.aborted
-    then Counting
-  else if model.counter <= counterMax 
-    && model.counter >= 0
-		&& model.started 
-    && not model.launched 
-    && model.aborted 
-    then Aborted
-  else if model.counter = 0 
-    && model.started 
-    && model.launched 
-    && not model.aborted
-    then Launched
-  else Unresolved
-  
+  match model with 
+  | { started = false; launched = false; aborted = false } when model.counter = counterMax -> Ready
+  | { started = true; launched = false; aborted = false } when model.counter <= counterMax -> Counting
+  | { started = true; launched = false; aborted = true } when model.counter <= counterMax && model.counter >= 0 -> Aborted
+  | { started = true; launched = true; aborted = false } when model.counter = 0 -> Launched
+  | _ -> Unresolved
+
 let representation model =
   let currentState = getState model in
   match currentState with
@@ -40,10 +23,7 @@ let representation model =
 let nextAction model = 
   let currentState = getState model in
   match currentState with
-  | Counting -> 
-  	if model.counter > 0 then
-		  model, Tea_time.delay 1000.0 Decrement
-    else if model.counter = 0 then
-			model, msg Launch
-    else model, none
+  | Counting when model.counter > 0 -> model, Tea_time.delay 1000.0 Decrement
+  | Counting when model.counter = 0 -> model, msg Launch
+  | Counting -> model, none
   | _ -> model, none
