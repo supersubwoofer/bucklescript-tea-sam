@@ -25,5 +25,4 @@ let nextAction model =
   match currentState with
   | Counting when model.counter > 0 -> model, Tea_time.delay 1000.0 Decrement
   | Counting when model.counter = 0 -> model, msg Launch
-  | Counting -> model, none
   | _ -> model, none
