@@ -7,8 +7,8 @@ let getState model =
   match model with 
   | { started = false; launched = false; aborted = false } when model.counter = counterMax -> Ready
   | { started = true; launched = false; aborted = false } when model.counter <= counterMax -> Counting
-  | { started = true; launched = false; aborted = true } when model.counter <= counterMax && model.counter >= 0 -> Aborted
-  | { started = true; launched = true; aborted = false } when model.counter = 0 -> Launched
+  | { aborted = true } -> Aborted
+  | { launched = true } -> Launched
   | _ -> Unresolved
 
 let representation model =
