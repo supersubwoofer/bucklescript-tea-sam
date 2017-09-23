@@ -1,1 +1,1 @@
-let counterMax = 10;
+let const_counter_max = 10

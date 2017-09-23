@@ -5,10 +5,10 @@ open View
 
 let getState model = 
   match model with 
-  | { started = false; launched = false; aborted = false } when model.counter = counterMax -> Ready
-  | { started = true; launched = false; aborted = false } when model.counter <= counterMax -> Counting
-  | { aborted = true } -> Aborted
-  | { launched = true } -> Launched
+  | { started = false } when model.counter = const_counter_max -> Ready
+  | { started = false } when model.counter < const_counter_max-> Aborted
+  | { started = true } when model.counter > 0 && model.counter <= const_counter_max -> Counting
+  | { started = true } when model.counter = 0 -> Launched
   | _ -> Unresolved
 
 let representation model =
