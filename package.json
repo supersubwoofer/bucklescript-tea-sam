@@ -6,11 +6,11 @@
     "clean": "bsb -clean",
     "clean:all": "bsb -clean-world",
     "build:bsb": "bsb -make-world",
-    "build:js": "rollup -c",
-    "serve": "serve release",
+    "build:js": "rollup --config rollup.config.prod.js",
     "build": "run-s build:bsb build:js",
+    "serve": "serve dev",
     "watch:bsb": "bsb -make-world -w",
-    "watch:js": "rollup -c -w",
+    "watch:js": "rollup -w --config rollup.config.dev.js",
     "watch": "run-p watch:bsb watch:js serve"
   },
   "keywords": [
@@ -27,6 +27,6 @@
     "rollup-plugin-livereload": "^0.6.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-watch": "^4.3.1",
-    "serve": "^6.0.6"
+    "serve": "^6.1.0"
   }
 }
