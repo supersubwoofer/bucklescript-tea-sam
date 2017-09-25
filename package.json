@@ -8,6 +8,7 @@
     "build:bsb": "bsb -make-world",
     "build:js": "rollup --config rollup.config.prod.js",
     "build": "run-s build:bsb build:js",
+    "clean:build": "run-s clean:all build:bsb build:js",
     "serve": "serve dev",
     "watch:bsb": "bsb -make-world -w",
     "watch:js": "rollup -w --config rollup.config.dev.js",
