@@ -32,13 +32,6 @@ npm run build
 npm run watch
 ```
 
-## Docker
-- Build
-docker build -t sam-bucklescript-tea-launcher .
--run
-docker run -p 80:80 -d sam-bucklescript-tea-launcher
-
-
 ## Credits
 - [Bucklescript-TEA](https://github.com/OvermindDL1/bucklescript-tea) by OvermindDL1
 - [Bucklescript-TEA starter kit](https://github.com/tcoopman/bucklescript-tea-starter-kit) by Thomas Coopman
