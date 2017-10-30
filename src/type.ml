@@ -1,6 +1,8 @@
 type model = { 
-  started: bool;   
   counter: int;  
+  started: bool;   
+  launched: bool;
+  aborted: bool
 }
 type proposal = model
 

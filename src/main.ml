@@ -16,7 +16,12 @@ let main =
   standardProgram {
     init = init;
     update = (
-      fun model actionMsg -> (propose model actionMsg |> present model |> nextAction)
+      fun model actionMsg -> 
+      (
+      propose model actionMsg 
+      |> present model 
+      |> nextAction
+      )
     );
     view = representation;
     subscriptions = (fun _m -> Tea_sub.NoSub);

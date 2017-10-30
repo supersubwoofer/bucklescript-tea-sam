@@ -5,11 +5,24 @@ open View
 
 let getState model = 
   match model with 
-  | { started = false } when model.counter = const_counter_max -> Ready
-  | { started = false } when model.counter < const_counter_max-> Aborted
-  | { started = true } when model.counter > 0 && model.counter <= const_counter_max -> Counting
-  | { started = true } when model.counter = 0 -> Launched
-  | _ -> Unresolved
+  | { started = false; launched = false; aborted = false } 
+    when model.counter = const_counter_max -> 
+      Ready
+
+  | { started = true; launched = false; aborted = true } 
+    when model.counter >= 0 && model.counter <= const_counter_max -> 
+      Aborted
+
+  | { started = true; launched = false; aborted = false } 
+    when model.counter >= 0 && model.counter <= const_counter_max -> 
+      Counting
+
+  | { started = true; launched = true; aborted = false } 
+    when model.counter = 0 -> 
+      Launched
+    
+  | _ -> 
+    Unresolved
 
 let representation model =
   let currentState = getState model in
