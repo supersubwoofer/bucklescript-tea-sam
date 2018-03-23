@@ -18,9 +18,9 @@ let main =
     update = (
       fun model actionMsg -> 
       (
-      propose model actionMsg 
-      |> present model 
-      |> nextAction
+        propose model actionMsg 
+        |> present model 
+        |> nextAction
       )
     );
     view = representation;

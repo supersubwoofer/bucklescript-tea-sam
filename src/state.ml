@@ -3,7 +3,7 @@ open Type
 open Config
 open View
 
-let getState model = 
+let controlState model = 
   match model with 
   | { started = false; launched = false; aborted = false } 
     when model.counter = const_counter_max -> 
@@ -25,8 +25,7 @@ let getState model =
     Unresolved
 
 let representation model =
-  let currentState = getState model in
-  match currentState with
+  match controlState model with
   | Ready -> ready model
   | Counting -> counting model
   | Aborted -> aborted model
@@ -34,8 +33,7 @@ let representation model =
   | Unresolved -> unresolved model
 
 let nextAction model = 
-  let currentState = getState model in
-  match currentState with
+  match controlState model with
   | Counting when model.counter > 0 -> model, Tea_time.delay 1000.0 Decrement
   | Counting when model.counter = 0 -> model, msg Launch
   | _ -> model, none
