@@ -12,12 +12,11 @@ let initModel = {
 let init() = initModel, none
 
 let present model proposal =
-  match controlState model with
-  | Ready -> { model with started = proposal.started }
-  | Counting ->
-      begin match model.counter with
-      | 0 -> { model with launched = proposal.launched } 
-      | _ -> { model with started = proposal.started; counter = proposal.counter; aborted = proposal.aborted }
-      end
-  | Aborted when proposal = initModel -> proposal
+  let state_proposal = (controlState model, proposal) in
+  match state_proposal with
+  | (Ready, StartStatus data) -> { model with started = data }
+  | (Counting, DecrementValue data) -> { model with counter = model.counter - data }
+  | (Counting, AbortStatus data) -> { model with aborted = data }
+  | (Counting, LaunchStatus data) -> { model with launched = data }
+  | (Aborted, ResetProposal) -> initModel
   | _ -> model

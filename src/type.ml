@@ -1,10 +1,9 @@
-type model = { 
-  counter: int;  
-  started: bool;   
-  launched: bool;
-  aborted: bool
-}
-type proposal = model
+type state = 
+  | Ready
+  | Counting
+  | Aborted
+  | Launched
+  | Unresolved
 
 type actionMsg =
   | Start
@@ -13,9 +12,17 @@ type actionMsg =
   | Abort 
   | Reset
 
-type state = 
-  | Ready
-  | Counting
-  | Aborted
-  | Launched
-  | Unresolved
+type model = { 
+  counter: int;  
+  started: bool;   
+  launched: bool;
+  aborted: bool
+}
+
+(* proposal decouple from model *)
+type proposal = 
+  | StartStatus of bool
+  | DecrementValue of int
+  | LaunchStatus of bool
+  | AbortStatus of bool
+  | ResetProposal

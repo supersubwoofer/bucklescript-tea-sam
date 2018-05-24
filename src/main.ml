@@ -18,7 +18,7 @@ let main =
     update = (
       fun model actionMsg -> 
       (
-        propose model actionMsg 
+        propose actionMsg 
         |> present model 
         |> nextAction
       )
