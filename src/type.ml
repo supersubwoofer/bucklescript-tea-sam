@@ -19,10 +19,9 @@ type model = {
   aborted: bool
 }
 
-(* proposal decouple from model *)
 type proposal = 
   | StartStatus of bool
   | DecrementValue of int
   | LaunchStatus of bool
   | AbortStatus of bool
-  | ResetProposal
+  | ResetProposal of model

@@ -1,1 +1,0 @@
-let const_counter_max = 10

@@ -1,3 +1,3 @@
 open Type
 
-val propose : actionMsg -> proposal
+val propose : actionMsg -> model -> proposal

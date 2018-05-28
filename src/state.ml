@@ -1,28 +1,20 @@
 open Tea_cmd
 open Type
-open Config
 open View
 
 let controlState model = 
   match model with 
-  | { started = false; launched = false; aborted = false } 
-    when model.counter = const_counter_max -> 
-      Ready
-
-  | { started = true; launched = false; aborted = true } 
-    when model.counter >= 0 && model.counter <= const_counter_max -> 
-      Aborted
-
-  | { started = true; launched = false; aborted = false } 
-    when model.counter >= 0 && model.counter <= const_counter_max -> 
-      Counting
-
+  | { started = false; launched = false; aborted = false } ->
+  Ready
+  | { started = true; launched = false; aborted = true } -> 
+  Aborted
+  | { started = true; launched = false; aborted = false } -> 
+  Counting
   | { started = true; launched = true; aborted = false } 
-    when model.counter = 0 -> 
-      Launched
-    
+  when model.counter = 0 -> 
+  Launched
   | _ -> 
-    Unresolved
+  Unresolved
 
 let representation model =
   match controlState model with

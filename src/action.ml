@@ -1,9 +1,9 @@
 open Type
 
-let propose actionMsg =
+let propose actionMsg initData =
   match actionMsg with
   | Start -> StartStatus true
   | Decrement -> DecrementValue 1
   | Launch -> LaunchStatus true
   | Abort -> AbortStatus true
-  | Reset -> ResetProposal
+  | Reset -> ResetProposal initData

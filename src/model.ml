@@ -1,15 +1,5 @@
-open Tea_cmd
 open Type
-open Config
 open State
-
-let initModel = { 
-  started = false; 
-  counter = const_counter_max; 
-  launched = false;
-  aborted = false;
-}
-let init() = initModel, none
 
 let present model proposal =
   let state_proposal = (controlState model, proposal) in
@@ -18,5 +8,5 @@ let present model proposal =
   | (Counting, DecrementValue data) -> { model with counter = model.counter - data }
   | (Counting, AbortStatus data) -> { model with aborted = data }
   | (Counting, LaunchStatus data) -> { model with launched = data }
-  | (Aborted, ResetProposal) -> initModel
+  | (Aborted, ResetProposal data) -> data
   | _ -> model
