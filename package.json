@@ -1,10 +1,10 @@
 {
   "name": "bucklescript-tea-sam",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "supersubwoofer",
-  "repository": { 
-    "type" : "git",
-    "url" : "https://github.com/supersubwoofer/bucklescript-tea-sam"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supersubwoofer/bucklescript-tea-sam"
   },
   "scripts": {
     "clean": "bsb -clean",
