@@ -1,7 +1,6 @@
 open Type
 
-let propose actionMsg initData =
-  match actionMsg with
+let propose initData = function
   | Start -> StartStatus true
   | Decrement -> DecrementValue 1
   | Launch -> LaunchStatus true

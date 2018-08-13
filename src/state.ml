@@ -2,19 +2,17 @@ open Tea_cmd
 open Type
 open View
 
-let controlState model = 
-  match model with 
+let controlState = function
   | { started = false; launched = false; aborted = false } ->
-  Ready
+    Ready
   | { started = true; launched = false; aborted = true } -> 
-  Aborted
+    Aborted
   | { started = true; launched = false; aborted = false } -> 
-  Counting
-  | { started = true; launched = true; aborted = false } 
-  when model.counter = 0 -> 
-  Launched
+    Counting
+  | { started = true; launched = true; aborted = false; counter = 0 } -> 
+    Launched
   | _ -> 
-  Unresolved
+    Unresolved
 
 let representation model =
   match controlState model with

@@ -15,12 +15,11 @@ let initModel = {
   aborted = false;
 }
 
-let tea_app_init() = initModel, none
+let app_init() = initModel, none
 
-let tea_app_update() = fun model actionMsg -> 
-  propose actionMsg initModel
-  |> present model 
-  |> nextAction
+let sam_app_update() = 
+  fun model actionMsg -> 
+  propose initModel actionMsg |> present model |> nextAction
     
 (* This is the main function, SAM modules are wired to TEA.
   The Program returned here has a set of callbacks that can easily be called from
@@ -30,8 +29,8 @@ let tea_app_update() = fun model actionMsg ->
   attribute on the `msg` type or manually, that way even javascript can use it safely. *)
 let main =
   standardProgram {
-    init = tea_app_init;
-    update = tea_app_update();
+    init = app_init;
+    update = sam_app_update();
     view = representation;
     subscriptions = (fun _m -> Tea_sub.NoSub);
   }
